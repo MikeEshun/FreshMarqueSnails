@@ -1,0 +1,10 @@
+C:\Projects\csharp\RiderProjects\FreshMarqueSnails\bin\Debug\netcoreapp2.0\FreshMarqueSnails.deps.json
+C:\Projects\csharp\RiderProjects\FreshMarqueSnails\bin\Debug\netcoreapp2.0\FreshMarqueSnails.runtimeconfig.json
+C:\Projects\csharp\RiderProjects\FreshMarqueSnails\bin\Debug\netcoreapp2.0\FreshMarqueSnails.runtimeconfig.dev.json
+C:\Projects\csharp\RiderProjects\FreshMarqueSnails\bin\Debug\netcoreapp2.0\FreshMarqueSnails.dll
+C:\Projects\csharp\RiderProjects\FreshMarqueSnails\bin\Debug\netcoreapp2.0\FreshMarqueSnails.pdb
+C:\Projects\csharp\RiderProjects\FreshMarqueSnails\obj\Debug\netcoreapp2.0\FreshMarqueSnails.csproj.CoreCompileInputs.cache
+C:\Projects\csharp\RiderProjects\FreshMarqueSnails\obj\Debug\netcoreapp2.0\FreshMarqueSnails.AssemblyInfoInputs.cache
+C:\Projects\csharp\RiderProjects\FreshMarqueSnails\obj\Debug\netcoreapp2.0\FreshMarqueSnails.AssemblyInfo.cs
+C:\Projects\csharp\RiderProjects\FreshMarqueSnails\obj\Debug\netcoreapp2.0\FreshMarqueSnails.dll
+C:\Projects\csharp\RiderProjects\FreshMarqueSnails\obj\Debug\netcoreapp2.0\FreshMarqueSnails.pdb
