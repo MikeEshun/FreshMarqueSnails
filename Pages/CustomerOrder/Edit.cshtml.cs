@@ -53,7 +53,7 @@ namespace FreshMarqueSnails.Pages.CustomerOrder
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!CustomerOrderExists(CustomerOrder.ID))
+                if (!_context.CustomerOrder.Any(e => e.ID == CustomerOrder.ID))
                 {
                     return NotFound();
                 }

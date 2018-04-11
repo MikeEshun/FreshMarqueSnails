@@ -36,6 +36,16 @@ body {
     color: whitesmoke;
 }
 
+.edit-container {
+    display: flex;
+    justify-content: center;
+}
+
+.edit {
+    display: flex;
+    justify-content: space-around;
+}
+
 
 .my-footer {
     color: whitesmoke;
