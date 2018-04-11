@@ -1,0 +1,70 @@
+@page
+@model FreshMarqueSnails.Pages.CustomerOrder.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>CustomerOrder</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerOrder.OrderDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CustomerOrder.OrderDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerOrder.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CustomerOrder.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerOrder.Location)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CustomerOrder.Location)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerOrder.DeliveryDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CustomerOrder.DeliveryDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerOrder.Quantity)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CustomerOrder.Quantity)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerOrder.Cost)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CustomerOrder.Cost)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerOrder.DeliveryStatus)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CustomerOrder.DeliveryStatus)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerOrder.Comments)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CustomerOrder.Comments)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="CustomerOrder.ID" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>
