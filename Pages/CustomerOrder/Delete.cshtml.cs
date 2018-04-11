@@ -19,7 +19,7 @@ namespace FreshMarqueSnails.Pages.CustomerOrder
         }
 
         [BindProperty]
-        public CustomerOrder CustomerOrder { get; set; }
+        public Models.CustomerOrder CustomerOrder { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {

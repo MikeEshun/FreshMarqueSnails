@@ -11,14 +11,14 @@ namespace FreshMarqueSnails.Pages.CustomerOrder
 {
     public class DetailsModel : PageModel
     {
-        private readonly FreshMarqueSnails.Models.CustomerOrderContext _context;
+        private readonly CustomerOrderContext _context;
 
-        public DetailsModel(FreshMarqueSnails.Models.CustomerOrderContext context)
+        public DetailsModel(CustomerOrderContext context)
         {
             _context = context;
         }
 
-        public CustomerOrder CustomerOrder { get; set; }
+        public Models.CustomerOrder CustomerOrder { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {

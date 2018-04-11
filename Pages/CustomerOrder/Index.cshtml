@@ -1,15 +1,28 @@
-@page
+@page "{deliveryStatus?}"
 @model FreshMarqueSnails.Pages.CustomerOrder.IndexModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Orders";
 }
 
-<h2>Index</h2>
+<div>
+    <p style="float: right">
+        <a asp-page="Create" class="btn btn-primary">New Order</a>
+    </p>
+    <h2>Orders</h2>
+</div>
 
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
+@*<form>*@
+@*    <p>*@
+@*        <select asp-for="DeliveryStatus" asp-items="Model.Status">*@
+@*            <option value="">All</option>*@
+@*        </select>*@
+@**@
+@*        Customer Name: <input type="text" name="deliveryStatus" class="form-group" style="border-radius: 3px">*@
+@*        <input type="submit" value="Filter" class="btn btn-primary" style="padding: 3px 10px"/>*@
+@*    </p>*@
+@*</form>*@
+
 <table class="table">
     <thead>
         <tr>

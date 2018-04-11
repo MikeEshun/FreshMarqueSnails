@@ -29,7 +29,8 @@ namespace FreshMarqueSnails.Models
         [DataType(DataType.Currency)]
         public decimal Cost { get; set; }
         
-        [StringLength(10, MinimumLength = 2)]
+        [StringLength(20, MinimumLength = 2)]
+        [Display(Name = "Delivery Status")]
         [Required]
         public string DeliveryStatus { get; set; }
         

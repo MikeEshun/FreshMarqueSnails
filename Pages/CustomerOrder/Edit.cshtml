@@ -2,13 +2,12 @@
 @model FreshMarqueSnails.Pages.CustomerOrder.EditModel
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Edit Order";
 }
 
-<h2>Edit</h2>
-
-<h4>CustomerOrder</h4>
+<h4>Order: @Html.DisplayFor(model => model.CustomerOrder.ID)</h4>
 <hr />
+
 <div class="row">
     <div class="col-md-4">
         <form method="post">
