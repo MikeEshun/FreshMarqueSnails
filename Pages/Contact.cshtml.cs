@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc.RazorPages;
+﻿using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FreshMarqueSnails.Pages
 {
@@ -12,7 +8,7 @@ namespace FreshMarqueSnails.Pages
 
         public void OnGet()
         {
-            Message = "Your contact page.";
+            Message = "Contact us on FB and IG.";
         }
     }
 }

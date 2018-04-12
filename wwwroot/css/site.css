@@ -39,13 +39,36 @@ body {
 .edit-container {
     display: flex;
     justify-content: center;
+    margin-top: 45px;
 }
 
 .edit {
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 
+.item {
+    flex-wrap: wrap;
+    width: 150px;
+}
+
+#form-display {
+    display: inline;
+}
+
+.edit-btn {
+    margin-top: 40px;
+}
+
+.edit-btn-size {
+    width: 50%;
+    /*margin: 0 auto;*/
+}
+
+.space {
+    margin-top: 50px;
+}
 
 .my-footer {
     color: whitesmoke;

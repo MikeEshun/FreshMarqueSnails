@@ -1,48 +1,35 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
+using FreshMarqueSnails.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using FreshMarqueSnails.Models;
 
 namespace FreshMarqueSnails.Pages.CustomerOrder
 {
     public class DeleteModel : PageModel
     {
-        private readonly FreshMarqueSnails.Models.CustomerOrderContext _context;
+        private readonly CustomerOrderContext _context;
 
-        public DeleteModel(FreshMarqueSnails.Models.CustomerOrderContext context)
+        public DeleteModel(CustomerOrderContext context)
         {
             _context = context;
         }
 
-        [BindProperty]
-        public Models.CustomerOrder CustomerOrder { get; set; }
+        [BindProperty] public Models.CustomerOrder CustomerOrder { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
+            if (id == null) return NotFound();
 
             CustomerOrder = await _context.CustomerOrder.SingleOrDefaultAsync(m => m.ID == id);
 
-            if (CustomerOrder == null)
-            {
-                return NotFound();
-            }
+            if (CustomerOrder == null) return NotFound();
             return Page();
         }
 
         public async Task<IActionResult> OnPostAsync(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
+            if (id == null) return NotFound();
 
             CustomerOrder = await _context.CustomerOrder.FindAsync(id);
 

@@ -1,10 +1,8 @@
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
+using FreshMarqueSnails.Models;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using FreshMarqueSnails.Models;
-using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace FreshMarqueSnails.Pages.CustomerOrder
 {
@@ -17,13 +15,13 @@ namespace FreshMarqueSnails.Pages.CustomerOrder
             _context = context;
         }
 
-        public IList<Models.CustomerOrder> CustomerOrder { get;set; }
+        public IList<Models.CustomerOrder> CustomerOrder { get; set; }
 
         public async Task OnGetAsync()
         {
 //            var orders = from c in _context.CustomerOrder
 //                select c;
-            
+
             CustomerOrder = await _context.CustomerOrder.ToListAsync();
         }
     }

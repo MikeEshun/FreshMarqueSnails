@@ -1,68 +1,82 @@
 @page
-@using FreshMarqueSnails.Pages.CustomerOrder
-@model FreshMarqueSnails.Pages.CustomerOrder.CreateModel
+@model CustomerOrder.CreateModel
 
 @{
     ViewData["Title"] = "New Order";
 }
 
 <h2>Customer Order</h2>
-<hr />
-<div class="row">
-    <div class="col-md-4">
+<hr/>
+
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="CustomerOrder.OrderDate" class="control-label"></label>
-                <input asp-for="CustomerOrder.OrderDate" class="form-control" />
-                <span asp-validation-for="CustomerOrder.OrderDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CustomerOrder.Name" class="control-label"></label>
-                <input asp-for="CustomerOrder.Name" class="form-control" />
-                <span asp-validation-for="CustomerOrder.Name" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CustomerOrder.Location" class="control-label"></label>
-                <input asp-for="CustomerOrder.Location" class="form-control" />
-                <span asp-validation-for="CustomerOrder.Location" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CustomerOrder.DeliveryDate" class="control-label"></label>
-                <input asp-for="CustomerOrder.DeliveryDate" class="form-control" />
-                <span asp-validation-for="CustomerOrder.DeliveryDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CustomerOrder.Quantity" class="control-label"></label>
-                <input asp-for="CustomerOrder.Quantity" class="form-control" />
-                <span asp-validation-for="CustomerOrder.Quantity" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CustomerOrder.Cost" class="control-label"></label>
-                <input asp-for="CustomerOrder.Cost" class="form-control" />
-                <span asp-validation-for="CustomerOrder.Cost" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CustomerOrder.DeliveryStatus" class="control-label"></label>
-                <input asp-for="CustomerOrder.DeliveryStatus" class="form-control" />
-                <span asp-validation-for="CustomerOrder.DeliveryStatus" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CustomerOrder.Comments" class="control-label"></label>
-                <input asp-for="CustomerOrder.Comments" class="form-control" />
-                <span asp-validation-for="CustomerOrder.Comments" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-default" />
+            <div class="row">
+                <div class="form-group col-md-4">
+                    <label asp-for="CustomerOrder.OrderDate" class="control-label"></label>
+                    <input asp-for="CustomerOrder.OrderDate" class="form-control"/>
+                    <span asp-validation-for="CustomerOrder.OrderDate" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-4">
+                    <label asp-for="CustomerOrder.Name" class="control-label"></label>
+                    <input asp-for="CustomerOrder.Name" class="form-control"/>
+                    <span asp-validation-for="CustomerOrder.Name" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-4">
+                    <label asp-for="CustomerOrder.Location" class="control-label"></label>
+                    <input asp-for="CustomerOrder.Location" class="form-control"/>
+                    <span asp-validation-for="CustomerOrder.Location" class="text-danger"></span>
+                </div>
+                
+                <div class="w-100 d-none d-md-block"></div>
+                
+                <div class="form-group col-md-4">
+                    <label asp-for="CustomerOrder.DeliveryDate" class="control-label"></label>
+                    <input asp-for="CustomerOrder.DeliveryDate" class="form-control"/>
+                    <span asp-validation-for="CustomerOrder.DeliveryDate" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-4">
+                    <label asp-for="CustomerOrder.Quantity" class="control-label"></label>
+                    <input asp-for="CustomerOrder.Quantity" class="form-control"/>
+                    <span asp-validation-for="CustomerOrder.Quantity" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-4">
+                    <label asp-for="CustomerOrder.Cost" class="control-label"></label>
+                    <input asp-for="CustomerOrder.Cost" class="form-control"/>
+                    <span asp-validation-for="CustomerOrder.Cost" class="text-danger"></span>
+                </div>
+                
+                <div class="w-100 d-none d-md-block"></div>
+                
+                <div class="form-group col-md-4">
+                    <label asp-for="CustomerOrder.DeliveryStatus" class="control-label"></label>
+                    <input asp-for="CustomerOrder.DeliveryStatus" class="form-control"/>
+                    <span asp-validation-for="CustomerOrder.DeliveryStatus" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-4">
+                    <label asp-for="CustomerOrder.Comments" class="control-label"></label>
+                    <input asp-for="CustomerOrder.Comments" class="form-control"/>
+                    <span asp-validation-for="CustomerOrder.Comments" class="text-danger"></span>
+                </div>
+                
+                <div class="w-100 d-none d-md-block"></div>
+                
+                <div class="space"></div>
+                
+                <div class="form-group col-md-3"></div>
+                <div class="form-group col-md-3">
+                    <input type="submit" value="Create" class="btn btn-outline-secondary edit-btn-size"/>
+                </div>
+                <div class="form-group col-md-3">
+                    <a asp-page="./Index" class="btn btn-outline-secondary edit-btn-size">Cancel</a>
+                </div>
+                <div class="form-group col-md-3"></div>
             </div>
         </form>
-    </div>
-</div>
 
-<div>
-    <a asp-page="Index">Back to List</a>
-</div>
+@*<div>*@
+@*    <a asp-page="Index">Back to List</a>*@
+@*</div>*@
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
 }

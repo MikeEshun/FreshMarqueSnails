@@ -1,49 +1,36 @@
-using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FreshMarqueSnails.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using FreshMarqueSnails.Models;
 
 namespace FreshMarqueSnails.Pages.CustomerOrder
 {
     public class EditModel : PageModel
     {
-        private readonly FreshMarqueSnails.Models.CustomerOrderContext _context;
+        private readonly CustomerOrderContext _context;
 
-        public EditModel(FreshMarqueSnails.Models.CustomerOrderContext context)
+        public EditModel(CustomerOrderContext context)
         {
             _context = context;
         }
 
-        [BindProperty]
-        public Models.CustomerOrder CustomerOrder { get; set; }
+        [BindProperty] public Models.CustomerOrder CustomerOrder { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
+            if (id == null) return NotFound();
 
             CustomerOrder = await _context.CustomerOrder.SingleOrDefaultAsync(m => m.ID == id);
 
-            if (CustomerOrder == null)
-            {
-                return NotFound();
-            }
+            if (CustomerOrder == null) return NotFound();
             return Page();
         }
 
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
+            if (!ModelState.IsValid) return Page();
 
             _context.Attach(CustomerOrder).State = EntityState.Modified;
 
@@ -54,13 +41,8 @@ namespace FreshMarqueSnails.Pages.CustomerOrder
             catch (DbUpdateConcurrencyException)
             {
                 if (!_context.CustomerOrder.Any(e => e.ID == CustomerOrder.ID))
-                {
                     return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
+                throw;
             }
 
             return RedirectToPage("./Index");

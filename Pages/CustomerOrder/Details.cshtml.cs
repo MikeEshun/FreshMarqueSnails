@@ -1,11 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
+using FreshMarqueSnails.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using FreshMarqueSnails.Models;
 
 namespace FreshMarqueSnails.Pages.CustomerOrder
 {
@@ -22,17 +19,11 @@ namespace FreshMarqueSnails.Pages.CustomerOrder
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
+            if (id == null) return NotFound();
 
             CustomerOrder = await _context.CustomerOrder.SingleOrDefaultAsync(m => m.ID == id);
 
-            if (CustomerOrder == null)
-            {
-                return NotFound();
-            }
+            if (CustomerOrder == null) return NotFound();
             return Page();
         }
     }
