@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace FreshMarqueSnails.Migrations
 {
-    public class OrderCustomer : Migration
+    public partial class OrderCustomer : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
