@@ -4,6 +4,11 @@
 @{
     ViewData["Title"] = "Orders";
 }
+<style type="text/css">
+    .details_view { 
+        font-weight: bolder
+    }
+</style>
 
 <div>
     <p style="float: right">
@@ -31,6 +36,9 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.CustomerOrder[0].Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerOrder[0].Contact)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.CustomerOrder[0].Location)
@@ -66,6 +74,9 @@
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.Contact)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.Location)
             </td>
             <td>
@@ -77,18 +88,140 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Cost)
             </td>
-            <td>
+            <td style="text-align: center">
                 @Html.DisplayFor(modelItem => item.DeliveryStatus)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Comments)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                <a class="btn btn-sm btn-primary" asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                @*                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |*@
+                <button type="button" class="btn btn-sm btn-info" name="@item.ID" data-toggle="modal" data-target="#exampleModalCenter-@item.ID">
+                    Details
+                </button> |
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModalCenter-@item.ID" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Order Number: @item.ID</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="form-group col-md-4 details_view">
+                                        @Html.DisplayNameFor(modelItem => item.Name)
+                                    </div>
+                                    <div class="form-group col-md-4 details_view">
+                                        @Html.DisplayNameFor(modelItem => item.Contact)
+                                    </div>
+                                    <div class="form-group col-md-4 details_view">
+                                        @Html.DisplayNameFor(modelItem => item.Location)
+                                    </div>
+                                    
+                                    <div class="w-100 d-none d-md-block"></div>
+                                    
+                                    <div class="form-group col-md-4">
+                                        @Html.DisplayFor(modelItem => item.Name)
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        @Html.DisplayFor(modelItem => item.Contact)
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        @Html.DisplayFor(modelItem => item.Location)
+                                    </div>
+                                    
+                                    <div class="w-100 d-none d-md-block"></div>
+                                    
+                                    <div class="form-group col-md-4 details_view">
+                                        @Html.DisplayNameFor(modelItem => item.OrderDate)
+                                    </div>
+                                    <div class="form-group col-md-4 details_view">
+                                        @Html.DisplayNameFor(modelItem => item.DeliveryDate)
+                                    </div>
+                                    <div class="form-group col-md-4 details_view">
+                                        @Html.DisplayNameFor(modelItem => item.Quantity)
+                                    </div>
+                                    
+                                    <div class="w-100 d-none d-md-block"></div>
+                                    
+                                    <div class="form-group col-md-4">
+                                        @Html.DisplayFor(modelItem => item.OrderDate)
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        @Html.DisplayFor(modelItem => item.DeliveryDate)
+                                    </div>
+                                    <div class="form-group col-md-4 details_view">
+                                        @Html.DisplayFor(modelItem => item.Quantity)
+                                    </div>
+                                    
+                                    <div class="w-100 d-none d-md-block"></div>
+                                    
+                                    <div class="form-group col-md-4 details_view">
+                                        @Html.DisplayNameFor(modelItem => item.Cost)
+                                    </div>
+                                    <div class="form-group col-md-4 details_view">
+                                        @Html.DisplayNameFor(modelItem => item.DeliveryStatus)
+                                    </div>
+                                    <div class="form-group col-md-4 details_view">
+                                        @Html.DisplayNameFor(modelItem => item.Comments)
+                                    </div>
+                                    
+                                    <div class="w-100 d-none d-md-block"></div>
+                                    
+                                    <div class="form-group col-md-4">
+                                        @Html.DisplayFor(modelItem => item.Cost)
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        @Html.DisplayFor(modelItem => item.DeliveryStatus)
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        @Html.DisplayFor(modelItem => item.Comments)
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+@*                                <button type="button" class="btn btn-primary">Save changes</button>*@
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="btn btn-sm btn-danger" asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
             </td>
         </tr>
     }
     </tbody>
 </table>
+<!-- Button trigger modal -->
+@*<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">*@
+@*    Launch demo modal*@
+@*</button>*@
+
+@*@{*@
+@*    var id = 0;*@
+@*    var name = "";*@
+@*    var contact = "";*@
+@*    var location = "";*@
+@*    var deliveryDate = DateTime.Now;*@
+@*    var quantity = 1;*@
+@*    decimal cost;*@
+@*    var deliveryStatus = "";*@
+@*    var comments = "";*@
+@*    *@
+@*    foreach (var item in Model.CustomerOrder)*@
+@*    {*@
+@*        id = item.ID;*@
+@*        name = item.Name;*@
+@*        contact = item.Contact;*@
+@*        location = item.Location;*@
+@*        deliveryDate = item.DeliveryDate;*@
+@*        quantity = item.Quantity;*@
+@*        cost = item.Cost;*@
+@*        deliveryStatus = item.DeliveryStatus;*@
+@*        comments = item.Comments;*@
+@*    }*@
+@*}*@

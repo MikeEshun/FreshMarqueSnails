@@ -15,6 +15,10 @@ namespace FreshMarqueSnails.Models
         [Required]
         public string Name { get; set; }
 
+        [StringLength(10, MinimumLength = 10)]
+        [Required]
+        public string Contact { get; set; }
+
         [StringLength(50, MinimumLength = 3)]
         [Required]
         public string Location { get; set; }

@@ -66,6 +66,14 @@ body {
     /*margin: 0 auto;*/
 }
 
+.action-btn {
+    width: 100px;
+}
+
+#details_view {
+    font-weight: bolder;
+}
+
 .space {
     margin-top: 50px;
 }
