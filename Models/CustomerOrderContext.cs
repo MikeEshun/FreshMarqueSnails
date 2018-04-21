@@ -4,7 +4,7 @@ namespace FreshMarqueSnails.Models
 {
     public class CustomerOrderContext : DbContext
     {
-        public CustomerOrderContext(DbContextOptions options) : base(options)
+        public CustomerOrderContext(DbContextOptions<CustomerOrderContext> options) : base(options)
         {
         }
 

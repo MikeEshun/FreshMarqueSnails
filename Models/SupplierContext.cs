@@ -4,7 +4,7 @@ namespace FreshMarqueSnails.Models
 {
     public class SupplierContext : DbContext
     {
-        public SupplierContext(DbContextOptions options) : base(options)
+        public SupplierContext(DbContextOptions<SupplierContext> options) : base(options)
         {
             
         }

@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.0",
-    "signature": "84bb3045603103a51adeeb1f5e30c7975a008063"
+    "signature": "e0cce33eec26cc6ca38c2d36311c664a6f7295c7"
   },
   "compilationOptions": {
     "defines": [
@@ -23,7 +23,7 @@
     ".NETCoreApp,Version=v2.0": {
       "FreshMarqueSnails/1.0.0": {
         "dependencies": {
-          "Microsoft.AspNetCore.All": "2.0.6",
+          "Microsoft.AspNetCore.All": "2.0.7",
           "Microsoft.NETCore.App": "2.0.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.0.3",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "2.0.1",
@@ -148,7 +148,7 @@
           "lib/netstandard2.0/Microsoft.AspNetCore.dll": {}
         }
       },
-      "Microsoft.AspNetCore.All/2.0.6": {
+      "Microsoft.AspNetCore.All/2.0.7": {
         "dependencies": {
           "Microsoft.AspNetCore": "2.0.2",
           "Microsoft.AspNetCore.Antiforgery": "2.0.2",
@@ -4330,12 +4330,12 @@
       "path": "microsoft.aspnetcore/2.0.2",
       "hashPath": "microsoft.aspnetcore.2.0.2.nupkg.sha512"
     },
-    "Microsoft.AspNetCore.All/2.0.6": {
+    "Microsoft.AspNetCore.All/2.0.7": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-5AEYk4hS25RcPkh1kWeKpn487/9Bb3GeVfu8Sl7EOFv9ADXmz7ypVyVlp8FMwgQIJSykzy6kF6KOOduhrWGmSA==",
-      "path": "microsoft.aspnetcore.all/2.0.6",
-      "hashPath": "microsoft.aspnetcore.all.2.0.6.nupkg.sha512"
+      "sha512": "sha512-hpWBRgs094P0jBWJRqBV+8oXl6G+O5ixDAgXI5qouOsg2jlLOmYr1+95+lRbLSn31HhKbQdNel6VQSDUbm0juw==",
+      "path": "microsoft.aspnetcore.all/2.0.7",
+      "hashPath": "microsoft.aspnetcore.all.2.0.7.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Antiforgery/2.0.2": {
       "type": "package",
