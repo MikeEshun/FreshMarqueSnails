@@ -21,6 +21,10 @@ namespace FreshMarqueSnails
         {
             services.AddDbContext<CustomerOrderContext>(options =>
                 options.UseNpgsql(Configuration.GetConnectionString("FreshMarqueSnailsDBConnection")));
+
+            services.AddDbContext<SupplierContext>(options => 
+                options.UseNpgsql(Configuration.GetConnectionString("FreshMarqueSnailsDBConnection")));
+
             services.AddMvc();
         }
 

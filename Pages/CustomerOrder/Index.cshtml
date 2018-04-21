@@ -1,6 +1,7 @@
 @page "{deliveryStatus?}"
 @model CustomerOrder.IndexModel
 
+
 @{
     ViewData["Title"] = "Orders";
 }
@@ -11,9 +12,9 @@
 </style>
 
 <div>
-    <p style="float: right">
+    <div style="float: right">
         <a asp-page="Create" class="btn btn-default" id="newOrderBtn">New Order</a>
-    </p>
+    </div>
     <h2>Orders</h2>
 </div>
 
@@ -28,6 +29,7 @@
 @*    </p>*@
 @*</form>*@
 
+@*Main table displays for orders*@
 <table class="table">
     <thead>
     <tr>
@@ -100,7 +102,8 @@
                 <button type="button" class="btn btn-sm btn-info" name="@item.ID" data-toggle="modal" data-target="#exampleModalCenter-@item.ID">
                     Details
                 </button> |
-                <!-- Modal -->
+                
+                @*                Beginning of Details Modal*@
                 <div class="modal fade" id="exampleModalCenter-@item.ID" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
@@ -185,43 +188,16 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-@*                                <button type="button" class="btn btn-primary">Save changes</button>*@
                             </div>
                         </div>
                     </div>
                 </div>
+                @*                End of Details Modal*@
                 <a class="btn btn-sm btn-danger" asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
             </td>
         </tr>
     }
     </tbody>
 </table>
-<!-- Button trigger modal -->
-@*<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">*@
-@*    Launch demo modal*@
-@*</button>*@
+@*End of orders table*@
 
-@*@{*@
-@*    var id = 0;*@
-@*    var name = "";*@
-@*    var contact = "";*@
-@*    var location = "";*@
-@*    var deliveryDate = DateTime.Now;*@
-@*    var quantity = 1;*@
-@*    decimal cost;*@
-@*    var deliveryStatus = "";*@
-@*    var comments = "";*@
-@*    *@
-@*    foreach (var item in Model.CustomerOrder)*@
-@*    {*@
-@*        id = item.ID;*@
-@*        name = item.Name;*@
-@*        contact = item.Contact;*@
-@*        location = item.Location;*@
-@*        deliveryDate = item.DeliveryDate;*@
-@*        quantity = item.Quantity;*@
-@*        cost = item.Cost;*@
-@*        deliveryStatus = item.DeliveryStatus;*@
-@*        comments = item.Comments;*@
-@*    }*@
-@*}*@
